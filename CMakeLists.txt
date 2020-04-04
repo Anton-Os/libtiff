@@ -209,12 +209,3 @@ target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
 if ( JPEG_FOUND )
   target_link_libraries ( tiff ${JPEG_LIBRARY} )
 endif ( )
-
-add_library ( tiffxx libtiff/tif_stream.cxx )
-target_link_libraries ( tiffxx tiff )
-
-install_library ( tiff tiffxx )
-install_header ( libtiff/tiff.h ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h libtiff/tiffio.h 
-  libtiff/tiffvers.h ${CMAKE_CURRENT_BINARY_DIR}/tif_config.h )
-install_data ( COPYRIGHT ChangeLog README RELEASE-DATE TODO )
-install_doc ( html/ )
