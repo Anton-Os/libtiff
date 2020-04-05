@@ -221,4 +221,6 @@ set(TIFF_HEADERS uvcode.h tiffvers.h tiffio.h tiffio.hxx tiffiop.h
     ${CMAKE_CURRENT_BINARY_DIR}/tif_config.h
     ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h )
 
+add_prefix (libtiff/ TIFF_HEADERS)
+
 install(FILES ${TIFF_HEADERS} DESTINATION include)
