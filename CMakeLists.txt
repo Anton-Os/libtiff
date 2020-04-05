@@ -225,3 +225,5 @@ list(APPEND TIFF_HEADERS
      ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h)
 
 install(FILES ${TIFF_HEADERS} DESTINATION include)
+
+install(EXPORT libtiff DESTINATION lib/libtiff FILE libtiff.cmake)
