@@ -209,3 +209,16 @@ target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
 if ( JPEG_FOUND )
   target_link_libraries ( tiff ${JPEG_LIBRARY} )
 endif ( )
+
+install(TARGETS tiff
+	EXPORT libtiff
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+	FRAMEWORK DESTINATION lib)
+
+set(TIFF_HEADERS uvcode.h tiffvers.h tiffio.h tiffio.hxx tiffiop.h
+    ${CMAKE_CURRENT_BINARY_DIR}/tif_config.h
+    ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h )
+
+install(FILES ${TIFF_HEADERS} DESTINATION include)
