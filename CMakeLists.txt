@@ -217,10 +217,11 @@ install(TARGETS tiff
 	ARCHIVE DESTINATION lib
 	FRAMEWORK DESTINATION lib)
 
-set(TIFF_HEADERS uvcode.h tiffvers.h tiffio.h tiffio.hxx tiffiop.h
-    ${CMAKE_CURRENT_BINARY_DIR}/tif_config.h
-    ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h )
-
+set(TIFF_HEADERS uvcode.h tiffvers.h tiffio.h tiffio.hxx tiffiop.h)
 add_prefix (libtiff/ TIFF_HEADERS)
+
+list(APPEND TIFF_HEADERS
+     ${CMAKE_CURRENT_BINARY_DIR}/tif_config.h
+     ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h)
 
 install(FILES ${TIFF_HEADERS} DESTINATION include)
