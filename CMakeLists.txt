@@ -219,7 +219,7 @@ list(APPEND TIFF_HEADERS
 
 target_include_directories(tiff 
 	PUBLIC
-	${TIFF_HEADERS})
+	$<BUILD_INTERFACE:${TIFF_HEADERS}>)
 
 install(TARGETS tiff
 	EXPORT libtiff
