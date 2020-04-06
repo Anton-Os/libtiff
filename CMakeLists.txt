@@ -210,7 +210,7 @@ if ( JPEG_FOUND )
   target_link_libraries ( tiff ${JPEG_LIBRARY} )
 endif ( )
 
-set(TIFF_HEADERS uvcode.h tiffvers.h tiffio.h tiffio.hxx tiffiop.h)
+set(TIFF_HEADERS uvcode.h tiffvers.h tiff.h tiffio.h tiffio.hxx tiffiop.h tif_predict.h)
 add_prefix (libtiff/ TIFF_HEADERS)
 
 list(APPEND TIFF_HEADERS
