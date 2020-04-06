@@ -218,8 +218,10 @@ list(APPEND TIFF_HEADERS
      ${CMAKE_CURRENT_BINARY_DIR}/tiffconf.h)
 
 target_include_directories(tiff 
-	PUBLIC
-	$<BUILD_INTERFACE:${TIFF_HEADERS}>)
+	INTERFACE
+	$<BUILD_INTERFACE:${TIFF_HEADERS}>
+	$<INSTALL_INTERFACE:${TIFF_HEADERS}>
+)
 
 install(TARGETS tiff
 	EXPORT libtiff
