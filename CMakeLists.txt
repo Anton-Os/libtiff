@@ -220,7 +220,7 @@ list(APPEND TIFF_HEADERS
 target_include_directories(tiff 
 	INTERFACE
 	$<BUILD_INTERFACE:${TIFF_HEADERS}>
-	$<INSTALL_INTERFACE:${TIFF_HEADERS}>
+	$<INSTALL_INTERFACE:include>
 )
 
 install(TARGETS tiff
