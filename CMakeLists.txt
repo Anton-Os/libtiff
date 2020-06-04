@@ -206,7 +206,11 @@ endif ( )
 
 add_library(tiff STATIC ${TIFF_SRCS} libtiff/libtiff.def )
 if ( NOT WIN32 )
-  target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
+  if(NOT M_LIBRARY)
+    target_link_libraries ( tiff ${ZLIB_LIBRARY} )
+  else()
+    target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
+  endif()
 else()
   target_link_libraries ( tiff ${ZLIB_LIBRARY}) # Stupid libm
 endif()
