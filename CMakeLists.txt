@@ -204,7 +204,7 @@ if ( WIN32 )
   add_definitions ( -DUSE_WIN32_FILEIO )
 endif ( )
 
-add_library ( tiff STATIC ${TIFF_SRCS} libtiff/libtiff.def )
+add_library(tiff STATIC ${TIFF_SRCS} libtiff/libtiff.def )
 target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
 if ( JPEG_FOUND )
   target_link_libraries ( tiff ${JPEG_LIBRARY} )
