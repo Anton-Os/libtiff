@@ -205,7 +205,6 @@ if ( WIN32 )
 endif ( )
 
 add_library(tiff STATIC ${TIFF_SRCS} libtiff/libtiff.def )
-set(ZLIB_LIBRARY zlibstatic)
 
 if ( NOT WIN32 )
   if(NOT M_LIBRARY)
