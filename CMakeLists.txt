@@ -205,7 +205,12 @@ if ( WIN32 )
 endif ( )
 
 add_library(tiff STATIC ${TIFF_SRCS} libtiff/libtiff.def )
-target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
+if ( NOT WIN32 )
+  target_link_libraries ( tiff ${ZLIB_LIBRARY} ${M_LIBRARY} )
+else()
+  target_link_libraries ( tiff ${ZLIB_LIBRARY}) # Stupid libm
+endif()
+
 if ( JPEG_FOUND )
   target_link_libraries ( tiff ${JPEG_LIBRARY} )
 endif ( )
